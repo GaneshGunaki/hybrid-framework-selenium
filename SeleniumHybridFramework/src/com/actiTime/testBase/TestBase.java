@@ -140,41 +140,7 @@ public class TestBase extends Utills{
 		return sampleData;
 	}
 }
-/////////////55555
-package utility;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.util.List;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
-
-import config.Constant;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-
-public class TestBase {
-
-	public static Properties Repository = new Properties();
-	public static File f;
-	public static FileInputStream FI;
-	public WebElement element = null;
-	public static String MobileOSValue;
-	public static WebDriver driver = null;
-
-	@BeforeTest()
 	@Parameters({ "browser", "MobileOS" })
 	public static void beforeTest(String browser, String MobileOS) throws Exception {
 		MobileOSValue = MobileOS;
@@ -188,43 +154,7 @@ public class TestBase {
 						"C:\\Automation\\SeleniumAutomation\\Practice\\src\\main\\java\\resources\\drivers\\chromedriver_2.32.exe");
 				ChromeOptions options = new ChromeOptions();
 				options.setExperimentalOption("useAutomationExtension", false);
-				driver = new ChromeDriver(options);
-				// driver= new RemoteWebDriver(new
-				// URL("http://127.0.0.1:8080/wd/hub"), capabilities);
-				break;
-
-			case "Desktop Firefox": // omni-channel
-				break;
-			}
-
-			capabilities.setCapability("scriptName", "Give Script Name");
-
-		} catch (Exception e) {
-
-			throw e;
-		}
-	}// end of method beforeTest
-
-	protected TestBase() {
-
-	}
-
-	public static void loadPropertiesFile() throws IOException {
-
-		f = new File(
-				System.getProperty("user.dir") + "\\src\\main\\java\\locators\\" + MobileOSValue + "\\obj.properties");
-		FI = new FileInputStream(f);
-		Repository.load(FI);
-
-		// f = new
-		// File(System.getProperty("user.dir")+"\\src\\com\\actiTime\\pageLocators\\loginpage.properties");
-		// FI = new FileInputStream(f);
-		// Repository.load(FI);
-		//
-		// f = new
-		// File(System.getProperty("user.dir")+"\\src\\com\\actiTime\\pageLocators\\reportsPage.properties");
-		// FI = new FileInputStream(f);
-		// Repository.load(FI);
+				driver = new (options)
 		//
 		// f = new
 		// File(System.getProperty("user.dir")+"\\src\\com\\actiTime\\pageLocators\\timeTracks.properties");
